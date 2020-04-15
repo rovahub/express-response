@@ -1,0 +1,26 @@
+image: node:13
+stages:
+  - test
+  - deploy
+
+test:unit:
+  stage: test
+  script:
+    - npm i --save
+    - npm test
+  allow_failure: false
+
+deploy:npmjs:
+  stage: deploy
+  before_script:
+    - test -n "$NPM_TOKEN" || ( echo "missing variable NPM_TOKEN" && exit 1)
+    - test -n "$CI_PROJECT_ID" || ( echo "missing variable CI_PROJECT_ID" && exit 1)
+    - echo $CI_PROJECT_ID
+    - echo $NPM_TOKEN
+    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'
+  script:
+    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
+    - npm publish
+  only:
+    - master
+  allow_failure: false

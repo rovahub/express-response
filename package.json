@@ -1,0 +1,28 @@
+{
+  "name": "@tdteam/response",
+  "version": "1.0.0",
+  "description": "TDTEAM",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config=jest.config.json",
+    "prepublish": "npm test"
+  },
+  "keywords": [
+    "tdteam"
+  ],
+  "author": {
+    "name": "TDTEAM",
+    "email": "contact@tocdoweb.com",
+    "url": "https://tocdoweb.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.1",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  }
+}
