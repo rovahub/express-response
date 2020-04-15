@@ -22,7 +22,7 @@ deploy:npmjs:
     - npm run build
   script:
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
-    - npm publish
+    - npm publish --access=public
   only:
     - master
   allow_failure: false
