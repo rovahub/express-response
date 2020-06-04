@@ -1,6 +1,6 @@
 {
   "name": "@tdteam/response",
-  "version": "1.0.3-dev",
+  "version": "1.0.3",
   "description": "TDTEAM",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
