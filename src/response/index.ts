@@ -2,7 +2,7 @@ import { NextFunction, Request as IExpressRequest } from 'express';
 
 import { IResponse, IResponseExpress } from '../interfaces/response.interface';
 
-export class Response implements IResponse {
+class Response implements IResponse {
   constructor(
     private readonly req: IExpressRequest,
     private readonly res: IResponseExpress,
@@ -56,4 +56,12 @@ export class Response implements IResponse {
       status: "error",
     });
   }
+}
+
+export function response(
+  req: IExpressRequest,
+  res: IResponseExpress,
+  next: NextFunction
+) {
+  return new Response(req, res, next);
 }
