@@ -18,6 +18,7 @@ deploy:npmjs:
     - echo $CI_PROJECT_ID
     - echo $NPM_TOKEN
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'
+    - npm i
     - npm i -g typescript
     - npm run build
   script:
