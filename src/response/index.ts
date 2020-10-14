@@ -8,35 +8,35 @@ class Response implements IResponse {
     private readonly res: IResponseExpress,
     private readonly next: NextFunction
   ) {
-    res.ok = (data: object) => {
-      return this.success(200, data);
+    res.ok = (data: object, status: number = 200) => {
+      return this.success(status, data);
     };
-    res.created = (data: object) => {
-      return this.success(201, data);
-    };
-
-    res.noContent = () => {
-      return this.success(204, {});
+    res.created = (data: object, status: number = 201) => {
+      return this.success(status, data);
     };
 
-    res.badRequest = (message: string) => {
-      return this.failure(400, message);
+    res.noContent = (status: number = 204) => {
+      return this.success(status, {});
     };
 
-    res.unauthorized = (message: string) => {
-      return this.failure(401, message);
+    res.badRequest = (message: string, status: number = 400) => {
+      return this.failure(status, message);
     };
 
-    res.forbidden = (message: string) => {
-      return this.failure(403, message);
+    res.unauthorized = (message: string, status: number = 401) => {
+      return this.failure(status, message);
     };
 
-    res.notFound = (message: string) => {
-      return this.failure(404, message);
+    res.forbidden = (message: string, status: number = 403) => {
+      return this.failure(status, message);
     };
 
-    res.internalServerError = (message: string) => {
-      return this.failure(500, message);
+    res.notFound = (message: string, status: number = 404) => {
+      return this.failure(status, message);
+    };
+
+    res.internalServerError = (message: string, status: number = 500) => {
+      return this.failure(status, message);
     };
 
     next();
