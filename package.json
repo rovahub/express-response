@@ -1,6 +1,6 @@
 {
   "name": "@rovahub/express-response",
-  "version": "1.0.0-dev",
+  "version": "1.0.0",
   "description": "This Express plugin for API json response.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

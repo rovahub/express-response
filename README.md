@@ -2,7 +2,9 @@
 [![](https://img.shields.io/npm/dt/%40rovahub%2Fexpress-response.svg?style=flat-square)](https://npmjs.com/package/%40rovahub%2Fexpress-response)
 
 # @rovahub/express-response
+
 This Express plugin for API json response.
+
 ## Install
 
 ``` bash
@@ -14,7 +16,9 @@ yarn add @rovahub/express-response
 ```
 
 ## Quickstart
+
 Import the @rovahub/express-response in your main JavaScript file.
+
 ### Express.js
 
 ```bash
@@ -43,7 +47,9 @@ var server = app.listen( process.env.PORT || 3000, function(){
   console.log('Listening on port ' + server.address().port);
 });
 ```
+
 Use in controller
+
 ```bash
 # controller.js
 const router = require('express').Router();
@@ -124,13 +130,13 @@ export class CatsController {
 
 **Methods supports**
 
- Method                                   | Function              | Type    | Status default 
-------------------------------------------|-----------------------|---------|----------------
- res.ok(data, status)                     | Success response      | success | 200            
- res.created(data, status)                | Created response      | success | 201            
- res.noContent(status)                    | No content response   | success | 204            
- res.badRequest(message, status)          | Bad request response  | failure | 400            
- res.unauthorized(message, status)        | Unauthorized response | failure | 401            
- res.forbidden(message, status)           | Forbidden response    | failure | 403            
- res.notFound(message, status)            | Not found response    | failure | 404            
- res.internalServerError(message, status) | Internal server error | failure | 500            
+ Method                                   | Feature               | Type    | Status 
+------------------------------------------|-----------------------|---------|--------
+ res.ok(data, status)                     | Success response      | success | 200    
+ res.created(data, status)                | Created response      | success | 201    
+ res.noContent(status)                    | No content response   | success | 204    
+ res.badRequest(message, status)          | Bad request response  | failure | 400    
+ res.unauthorized(message, status)        | Unauthorized response | failure | 401    
+ res.forbidden(message, status)           | Forbidden response    | failure | 403    
+ res.notFound(message, status)            | Not found response    | failure | 404    
+ res.internalServerError(message, status) | Internal server error | failure | 500    
